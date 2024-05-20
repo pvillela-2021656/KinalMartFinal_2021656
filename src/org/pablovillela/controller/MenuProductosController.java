@@ -304,7 +304,7 @@ public class MenuProductosController implements Initializable {
         ArrayList<TipoProducto> lista = new ArrayList<>();
 
         try {
-            PreparedStatement procedimiento = Conexion.getInstance().getConexion().prepareCall("{call sp_ListarProductos()}");
+            PreparedStatement procedimiento = Conexion.getInstance().getConexion().prepareCall("{call sp_ListarTipoProducto()}");
             ResultSet resultado = procedimiento.executeQuery();
 
             while (resultado.next()) {
