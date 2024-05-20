@@ -86,7 +86,7 @@ public class Productos {
         return proveedorId;
     }
 
-    public void setProveedorId(int proveedorId) {
+        public void setProveedorId(int proveedorId) {
         this.proveedorId = proveedorId;
     }
     

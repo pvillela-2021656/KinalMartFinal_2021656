@@ -64,6 +64,56 @@ create table Productos (
 	CONSTRAINT FK_proveedorId foreign key Proveedores(proveedorId)
 		references Proveedores(proveedorId) 
 );	
+
+create table Empleados (
+	empleadoId int not null,
+    nombreEmpleado varchar(50) not null,
+    apellidoEmpleado varchar(50) not null,
+    sueldo decimal (10,2) not null,
+    direccion varchar(150) not null,
+    turno varchar(15) not null,
+    codigoCargoEmpleado int not null,
+	PRIMARY KEY PKempleadoId (empleadoId),
+    CONSTRAINT FK_codigoCargoEmpleado foreign key CargoEmpleado(codigoCargoEmpleado)
+		references CargoEmpleado(codigoCargoEmpleado)
+);
+
+create table DetalleCompra (
+	codigoDetalleCompra int not null,
+    costoUnitario decimal(10,2) not null,
+    cantidad int not null,
+    codigoProducto int not null,
+    numeroDocumento int not null,
+    PRIMARY KEY PKcodigoDetalleCompra (codigoDetalleCompra),
+    CONSTRAINT FK_codigoProducto foreign key Productos(codigoProducto)
+		references Productos(codigoProducto),
+	CONSTRAINT FK_numeroDocumento foreign key Compras(numeroDocumento)
+		references Compras(numeroDocumento)
+);
+
+create table Factura (
+	numeroFactura int not null,
+    estado varchar(50) not null,
+    totalFactura decimal (10,2) not null,
+    fechaFactura date not null,
+    clienteId int not null,
+    PRIMARY KEY PKnumeroFactura (numeroFactura),
+    CONSTRAINT FK_clienteId foreign key Clientes(clienteId)
+		references Clientes(clienteId)
+);
+
+create table DetalleFactura(
+	codigoDetalleFactura int not null,
+    precioUnitario decimal(10,2),
+    cantidad int not null,
+    numeroFactura int not null,
+    codigoProducto int not null,
+    primary key PK_DetalleFactura(codigoDetalleFactura),
+    constraint FK_DetalleFactura_Factura foreign key DetalleFactura(numeroFactura)
+		references Factura(numeroFactura) on delete cascade,
+	constraint FK_DetalleFactura foreign key DetalleFactura(codigoProducto)
+		references Productos(codigoProducto) on delete cascade
+);
 -- AGREGAR
 Delimiter $$
 	create procedure sp_AgregarClientes (in clienteId int, in NIT varchar(10), in nombreCliente varchar(50), in apellidoCliente varchar(50), in direccionCliente varchar(150), in telefonoCliente varchar(8), in correoCliente varchar(45))
