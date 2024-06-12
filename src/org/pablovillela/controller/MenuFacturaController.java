@@ -3,6 +3,8 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +24,7 @@ import org.pablovillela.bean.Clientes;
 import org.pablovillela.bean.Empleados;
 import org.pablovillela.bean.Factura;
 import org.pablovillela.db.Conexion;
+import org.pablovillela.report.GenerarReporte;
 import org.pablovillela.system.Principal;
 
 public class MenuFacturaController implements Initializable {
@@ -194,6 +197,32 @@ public class MenuFacturaController implements Initializable {
                 cargarDatos();
                 break;
         }
+    }
+    
+    public void reportes() {
+        switch (tipoDeOperacion) {
+            case ACTUALIZAR:
+                desactivarControles();
+                limpiarControles();
+                btnEditarFactura.setText("Editar");
+                btnReportesFactura.setText("Reporte");
+                btnAgregarFactura.setDisable(false);
+                btnEliminarFactura.setDisable(false);
+                imgEditar.setImage(new Image("/org/pablovillela/image/actualizar.png"));
+                imgRecorte.setImage(new Image("/org/pablovillela/image/cancel.png"));
+                tipoDeOperacion = operaciones.NINGUNO;
+                break;
+            case NINGUNO:
+                imprimirReporte();
+                
+        }
+
+    }
+
+    public void imprimirReporte() {
+        Map parametros = new HashMap();
+        parametros.put("numeroFactura", null);
+        GenerarReporte.mostrarReportes("ReporteFactura.jasper", "Reporte de Facturas", parametros);
     }
     
     public void actualizar() {
