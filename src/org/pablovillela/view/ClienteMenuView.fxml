@@ -43,7 +43,7 @@
                   <Font size="23.0" />
                </font>
             </Button>
-            <Button fx:id="btnReportesClientes" mnemonicParsing="false" prefHeight="72.0" prefWidth="388.0" text="Reportes" GridPane.rowIndex="3">
+            <Button fx:id="btnReportesClientes" mnemonicParsing="false" onAction="#reportes" prefHeight="72.0" prefWidth="388.0" text="Reportes" GridPane.rowIndex="3">
                <graphic>
                   <ImageView fx:id="imgRecorte" fitHeight="37.0" fitWidth="35.0">
                      <image>

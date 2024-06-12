@@ -30,6 +30,12 @@ public class MenuPrincipalController implements Initializable {
     MenuItem btnMenuProductos;
     @FXML
     MenuItem btnMenuTipoProducto;
+    @FXML
+    MenuItem btnMenuDetalleCompra;
+    @FXML
+    MenuItem btnMenuEmpleados;
+    @FXML
+    MenuItem btnMenuFacturas;
     
     @Override
 
@@ -51,7 +57,6 @@ public class MenuPrincipalController implements Initializable {
 
     @FXML
     public void handleButtonAction(ActionEvent event) {
-
         if (event.getSource() == btnMenuClientes) {
             escenarioPrincipal.menuClientesView();
         } else if (event.getSource() == btnMenuProgramador) {
@@ -66,6 +71,12 @@ public class MenuPrincipalController implements Initializable {
             escenarioPrincipal.menuProductosView();
         } else if (event.getSource() == btnMenuTipoProducto) {
             escenarioPrincipal.menuTipoProductoView();
+        } else if (event.getSource() == btnMenuDetalleCompra) {
+            escenarioPrincipal.menuDetalleCompraView();
+        } else if (event.getSource() == btnMenuEmpleados) {
+            escenarioPrincipal.menuEmpleadosView();
+        } else if (event.getSource() == btnMenuFacturas) {
+            escenarioPrincipal.menuFacturasView();
         }
     }
 

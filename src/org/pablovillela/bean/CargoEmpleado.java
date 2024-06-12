@@ -6,6 +6,10 @@ public class CargoEmpleado {
     private String nombreCargo;
     private String descripcionCargo;
 
+    public CargoEmpleado() {
+        
+    }
+    
     public CargoEmpleado(int codigoCargoEmpleado, String nombreCargo, String descripcionCargo) {
         this.codigoCargoEmpleado = codigoCargoEmpleado;
         this.nombreCargo = nombreCargo;

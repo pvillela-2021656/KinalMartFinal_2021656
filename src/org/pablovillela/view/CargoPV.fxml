@@ -20,11 +20,11 @@
                 <Image url="@../image/cargo.png" />
             </image>
         </ImageView>
-        <TableView fx:id="tblCargo" layoutX="265.0" layoutY="234.0" prefHeight="236.0" prefWidth="406.0">
+        <TableView fx:id="tblCargo" layoutX="265.0" layoutY="234.0" onMouseClicked="#seleccionarElemento" prefHeight="236.0" prefWidth="406.0">
             <columns>
                 <TableColumn fx:id="colCargoEmpleado" prefWidth="123.0" text="Cargo Empleado" />
                 <TableColumn fx:id="colNombreCargo" prefWidth="131.0" text="Nombre Cargo" />
-                <TableColumn fx:id="colDescripcion" prefWidth="147.0" text="Descripcion" />
+                <TableColumn fx:id="colDescripcion" prefWidth="151.0" text="Descripcion" />
             </columns>
         </TableView>
         <GridPane layoutX="37.0" layoutY="227.0" prefHeight="242.0" prefWidth="172.0">
@@ -38,7 +38,7 @@
                 <RowConstraints maxHeight="53.600012207031256" minHeight="10.0" prefHeight="52.000036621093756" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="btnEditarCompras" mnemonicParsing="false" prefHeight="122.0" prefWidth="172.0" text="Editar" GridPane.rowIndex="2">
+                <Button fx:id="btnEditarCargoEmpleado" mnemonicParsing="false" onAction="#editar" prefHeight="122.0" prefWidth="172.0" text="Editar" GridPane.rowIndex="2">
                     <graphic>
                         <ImageView fx:id="imgEditar" fitHeight="35.0" fitWidth="41.0">
                             <image>
@@ -50,7 +50,7 @@
                         <Font size="23.0" />
                     </font>
                 </Button>
-                <Button fx:id="btnReportesCompras" mnemonicParsing="false" prefHeight="72.0" prefWidth="388.0" text="Reportes" GridPane.rowIndex="3">
+                <Button fx:id="btnReportesCargoEmpleado" mnemonicParsing="false" prefHeight="72.0" prefWidth="388.0" text="Reportes" GridPane.rowIndex="3">
                     <graphic>
                         <ImageView fx:id="imgRecorte" fitHeight="37.0" fitWidth="35.0">
                             <image>
@@ -62,19 +62,7 @@
                         <Font size="19.0" />
                     </font>
                 </Button>
-                <Button fx:id="btnEliminarCompras" mnemonicParsing="false" prefHeight="57.0" prefWidth="176.0" text="Eliminar" GridPane.rowIndex="1">
-                    <graphic>
-                        <ImageView fx:id="imgEliminar" fitHeight="33.0" fitWidth="39.0">
-                            <image>
-                                <Image url="@../image/basura.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                    <font>
-                        <Font size="21.0" />
-                    </font>
-                </Button>
-                <Button fx:id="btnAgregarCompras" mnemonicParsing="false" prefHeight="61.0" prefWidth="172.0" text="Agregar">
+                <Button fx:id="btnAgregarCargoEmpleado" mnemonicParsing="false" onAction="#Agregar" prefHeight="61.0" prefWidth="172.0" text="Agregar">
                     <graphic>
                         <ImageView fx:id="imgAgregar" fitHeight="20.0" fitWidth="41.0">
                             <image>
@@ -86,6 +74,18 @@
                         <Font size="23.0" />
                     </font>
                 </Button>
+            <Button fx:id="btnEliminarCargoEmpleado" layoutX="10.0" layoutY="73.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="57.0" prefWidth="176.0" text="Eliminar" GridPane.rowIndex="1">
+               <graphic>
+                  <ImageView fx:id="imgEliminar" fitHeight="33.0" fitWidth="39.0">
+                     <image>
+                        <Image url="@../image/basura.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
             </children>
         </GridPane>
         <Button fx:id="btnRegresar5" layoutX="39.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="177.0" text="Volver a Menu">

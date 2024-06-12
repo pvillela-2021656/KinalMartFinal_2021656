@@ -12,6 +12,9 @@ import javafx.stage.Stage;
 import org.pablovillela.controller.MenuCargoEmpleadoController;
 import org.pablovillela.controller.MenuClientesController;
 import org.pablovillela.controller.MenuComprasController;
+import org.pablovillela.controller.MenuDetalleCompraController;
+import org.pablovillela.controller.MenuEmpleadoController;
+import org.pablovillela.controller.MenuFacturaController;
 import org.pablovillela.controller.MenuPrincipalController;
 import org.pablovillela.controller.MenuProductosController;
 import org.pablovillela.controller.MenuProgramadorController;
@@ -42,7 +45,7 @@ public class Principal extends Application {
         InputStream file = Principal.class.getResourceAsStream("/org/pablovillela/view/" + fxmlName);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
         loader.setLocation(Principal.class.getResource("/org/pablovillela/view/" + fxmlName));
-        escena = new Scene((AnchorPane) loader.load(file), width, heigth);
+        escena = new Scene((AnchorPane) loader.load(file), width, heigth); 
         escenarioPrincipal.setScene(escena);
         escenarioPrincipal.sizeToScene();
         resultado = (Initializable) loader.getController();
@@ -128,6 +131,36 @@ public class Principal extends Application {
             e.printStackTrace();
         }
         
+    }
+    
+    public void menuDetalleCompraView() {
+        try {
+            MenuDetalleCompraController menuDetalleCompraView = (MenuDetalleCompraController) cambiarEscena("DetalleCompraPV.fxml", 940, 727);
+            menuDetalleCompraView.setEscenarioPrincipal(this);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void menuEmpleadosView() {
+        try {
+            MenuEmpleadoController menuEmpleadosView = (MenuEmpleadoController) cambiarEscena("EmpleadosPV.fxml", 940, 727);
+            menuEmpleadosView.setEscenarioPrincipal(this);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
+    public void menuFacturasView() {
+        try {
+            MenuFacturaController menuFacturasView = (MenuFacturaController) cambiarEscena("FacturasPV.fxml", 940, 727);
+            menuFacturasView.setEscenarioPrincipal(this);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public static void main(String[] args) {

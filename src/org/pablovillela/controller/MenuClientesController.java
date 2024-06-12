@@ -4,6 +4,8 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javax.swing.JOptionPane;
 import org.pablovillela.bean.Clientes;
 import org.pablovillela.db.Conexion;
+import org.pablovillela.report.GenerarReporte;
 import org.pablovillela.system.Principal;
 
 public class MenuClientesController implements Initializable {
@@ -186,6 +189,32 @@ public class MenuClientesController implements Initializable {
                 break;
 
         }
+    }
+
+    public void reportes() {
+        switch (tipoDeOperaciones) {
+            case ACTUALIZAR:
+                desactivarControles();
+                limpiarControles();
+                btnEditarCliente.setText("Editar");
+                btnReportesClientes.setText("Reporte");
+                btnAgregarCliente.setDisable(false);
+                btnEliminarCliente.setDisable(false);
+                imgEditar.setImage(new Image("/org/pablovillela/image/actualizar.png"));
+                imgRecorte.setImage(new Image("/org/pablovillela/image/cancel.png"));
+                tipoDeOperaciones = operaciones.NINGUNO;
+                break;
+            case NINGUNO:
+                imprimirReporte();
+                
+        }
+
+    }
+
+    public void imprimirReporte() {
+        Map parametros = new HashMap();
+        parametros.put("clienteid", null);
+        GenerarReporte.mostrarReportes("ReporteCliente.jasper", "Reporte de Clientes", parametros);
     }
 
     public void actualizar() {

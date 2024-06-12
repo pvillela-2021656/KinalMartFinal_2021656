@@ -19,10 +19,11 @@
         <menus>
           <Menu mnemonicParsing="false" text="Opciones">
             <items>
-              <MenuItem mnemonicParsing="false" text="Clientes" />
-                  <MenuItem mnemonicParsing="false" text="Proveedores" />
                   <MenuItem fx:id="btnMenuProductos" mnemonicParsing="false" onAction="#handleButtonAction" text="Productos" />
                   <MenuItem fx:id="btnMenuTipoProducto" mnemonicParsing="false" onAction="#handleButtonAction" text="Tipo Producto" />
+                  <MenuItem fx:id="btnMenuDetalleCompra" mnemonicParsing="false" onAction="#handleButtonAction" text="Detalle Compra" />
+                  <MenuItem fx:id="btnMenuEmpleados" mnemonicParsing="false" onAction="#handleButtonAction" text="Empleados" />
+                  <MenuItem fx:id="btnMenuFacturas" mnemonicParsing="false" onAction="#handleButtonAction" text="Facturas" />
             </items>
                <graphic>
                   <ImageView fitHeight="18.0" fitWidth="19.0">

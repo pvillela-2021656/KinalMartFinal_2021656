@@ -177,11 +177,6 @@ public class MenuProductosController implements Initializable {
     public void editar() {
         switch (tipoDeOperacion) {
             case NINGUNO:
-                /**
-                 * Si tipo de operaciones es NINGUNO, primero verifica si hay
-                 * registros en la tabla y si no muestra un cuadro de dialogo
-                 * para que el usuario selecciono algun registro.
-                 */
                 if (tblProductos.getSelectionModel().getSelectedItem() != null) {
                     btnEditarProductos.setText("Actualizar");
                     btnReportesProveedores.setText("Cancelar");
