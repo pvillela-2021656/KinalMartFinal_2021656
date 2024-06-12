@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCliente" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d0134d92-213d-48d8-ad6f-4b23cb6c68e6">
-	<property name="ireport.zoom" value="0.5644739300537778"/>
+	<property name="ireport.zoom" value="0.5644739300537783"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="241"/>
+	<property name="ireport.y" value="149"/>
 	<style name="style1"/>
 	<queryString>
 		<![CDATA[call sp_ListarClientes]]>
@@ -31,13 +31,20 @@
 	<background>
 		<band height="802" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="555" height="802" uuid="186e2d84-2757-4e10-b14d-c08b3d326ea0"/>
-				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\logoKinalReportes.jpg"]]></imageExpression>
+				<reportElement x="0" y="0" width="555" height="802" uuid="9818bd7b-831d-40e1-8e00-fc21aa2033ba"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\logoKinalReportesClientes.jpg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="19" y="20" width="55" height="60" uuid="0885dadc-18fa-4cc0-a13b-002bed27c477"/>
 				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\logoMart.jpg"]]></imageExpression>
 			</image>
+			<image>
+				<reportElement x="41" y="709" width="123" height="54" uuid="fe2d4df5-1193-4086-8993-41ed7a8e30d3"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\firmaDigital.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="41" y="763" width="123" height="1" uuid="6dc58785-de5f-4373-a7ad-4fd6f2972e00"/>
+			</line>
 		</band>
 	</background>
 	<title>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteFactura" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf198593-cb9a-42a1-a961-537bceebe9e8">
-	<property name="ireport.zoom" value="0.5644739300537773"/>
+	<property name="ireport.zoom" value="0.8264462809917363"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="0"/>
+	<property name="ireport.y" value="37"/>
 	<queryString>
 		<![CDATA[call sp_ListarFactura]]>
 	</queryString>
@@ -27,26 +27,86 @@
 	<background>
 		<band height="802" splitType="Stretch">
 			<image>
-				<reportElement x="0" y="0" width="555" height="802" uuid="b07c9843-cd50-40ed-8b84-3255c06c8615"/>
-				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\logoKinalReportes.jpg"]]></imageExpression>
+				<reportElement x="0" y="0" width="555" height="802" uuid="91686473-7bb1-4e84-8278-6a900ea101b4"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\logoKinalReportesFactura.jpg"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="23" y="25" width="52" height="56" uuid="1ca7e3e1-12a9-4de6-ad90-53911a262c68"/>
 				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\logoMart.jpg"]]></imageExpression>
 			</image>
+			<image>
+				<reportElement x="23" y="716" width="148" height="36" uuid="08833ae9-77f1-4664-9adf-c88b2c60a278"/>
+				<imageExpression><![CDATA["C:\\Users\\Byron\\OneDrive\\Documentos\\NetBeansProjects\\YaVamosPorAhi\\src\\org\\pablovillela\\image\\firmaDigital.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="23" y="752" width="148" height="1" uuid="19ec7a69-37c3-47e9-b0e3-66144f042761"/>
+			</line>
 		</band>
 	</background>
 	<title>
 		<band height="79" splitType="Stretch"/>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
+		<band height="210" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="61" splitType="Stretch"/>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="100" y="125" width="100" height="20" uuid="0bb727e2-0b5e-4758-aadb-95741f861bab"/>
+				<text><![CDATA[Estado de Factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="125" width="100" height="20" uuid="9e96fd8c-4a14-4058-ae14-2e2f3119c12a"/>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="125" width="100" height="20" uuid="ce45ffe5-b53c-469c-bf4f-9385fdddc6cf"/>
+				<text><![CDATA[Fecha de Factura:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="125" width="67" height="20" uuid="18dfae5b-4b9d-482f-86be-95062deb07bf"/>
+				<text><![CDATA[ID Del Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="125" width="88" height="20" uuid="50ac729a-919e-49c2-b4d9-90d680fcf919"/>
+				<text><![CDATA[ID Del Empleado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="125" width="100" height="20" uuid="5590d351-dd33-4d03-882d-77814e3f1a5e"/>
+				<text><![CDATA[Num. Factura:]]></text>
+			</staticText>
+		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch"/>
+		<band height="59" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="1" width="100" height="20" uuid="e2f02d92-4dcb-45a4-bf33-04785d9565b0"/>
+				<textFieldExpression><![CDATA[$F{estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="1" width="100" height="20" uuid="fe32ab1b-540b-4bf8-b08a-d3120b5fd089"/>
+				<textFieldExpression><![CDATA[$F{totalFactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="1" width="100" height="20" uuid="a99695a7-fff7-4832-95e0-f0c81f1bff9b"/>
+				<textFieldExpression><![CDATA[$F{fechaFactura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="1" width="67" height="20" uuid="2227a909-f38b-4903-82d1-50083f721d9e"/>
+				<textFieldExpression><![CDATA[$F{clienteId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="1" width="88" height="20" uuid="87590936-34fe-4010-ac49-c125c99bc862"/>
+				<textFieldExpression><![CDATA[$F{empleadoId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="1" width="100" height="20" uuid="64709200-3e64-4cc3-8184-3ac393c8927b"/>
+				<textFieldExpression><![CDATA[$F{numeroFactura}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="7a0e1e2b-56bb-45c9-8335-6975a310c87d"/>
+			</line>
+		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>

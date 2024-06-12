@@ -47,7 +47,7 @@
                   <Font size="23.0" />
                </font>
             </Button>
-            <Button fx:id="btnReportesProveedores" mnemonicParsing="false" prefHeight="62.0" prefWidth="184.0" text="Reportes" GridPane.rowIndex="3">
+            <Button fx:id="btnReportesProveedores" mnemonicParsing="false" onAction="#reportes" prefHeight="62.0" prefWidth="184.0" text="Reportes" GridPane.rowIndex="3">
                <font>
                   <Font size="23.0" />
                </font>

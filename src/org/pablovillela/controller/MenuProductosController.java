@@ -4,6 +4,8 @@ import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +26,7 @@ import org.pablovillela.bean.Productos;
 import org.pablovillela.bean.TipoProducto;
 import org.pablovillela.bean.Proveedores;
 import org.pablovillela.db.Conexion;
+import org.pablovillela.report.GenerarReporte;
 
 public class MenuProductosController implements Initializable {
 
@@ -207,6 +210,32 @@ public class MenuProductosController implements Initializable {
         }
     }
 
+    public void reportes() {
+        switch (tipoDeOperacion) {
+            case ACTUALIZAR:
+                desactivarControles();
+                limpiarControles();
+                btnEditarProductos.setText("Editar");
+                btnReportesProveedores.setText("Reporte");
+                btnAgregarProductos.setDisable(false);
+                btnEliminarProductos.setDisable(false);
+                imgEditar.setImage(new Image("/org/pablovillela/image/actualizar.png"));
+                imgRecorte.setImage(new Image("/org/pablovillela/image/cancel.png"));
+                tipoDeOperacion = operaciones.NINGUNO;
+                break;
+            case NINGUNO:
+                imprimirReporte();
+                
+        }
+
+    }
+
+    public void imprimirReporte() {
+        Map parametros = new HashMap();
+        parametros.put("codigoProducto", null);
+        GenerarReporte.mostrarReportes("ReporteProducto.jasper", "Reporte de Productos", parametros);
+    }
+    
     public void actualizar() {
         try {
             PreparedStatement p = Conexion.getInstance().getConexion().prepareCall("call sp_editarProductos(?,?,?,?,?,?,?,?);");
